@@ -1,0 +1,28 @@
+---
+title: "My Second Quarto Document"
+author: Solenia Suarez
+format: html
+execute:
+  echo: false
+---
+
+```{r}
+#| message: false
+#| label: setup
+library(tidyverse)
+```
+
+```{r}
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point() +
+  labs(
+    title = "Measurements for Different Species of Iris",
+    subtitle = "Virginica has the longest sepals",
+    x = "Sepal width (cm)",
+    y = "Sepal length (cm)",
+    color = "Species",
+    caption = "Fisher (1936)"
+  ) +
+  theme_minimal() +
+  theme(plot.caption = element_text(hjust = 1))
+```
